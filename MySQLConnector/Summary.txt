@@ -1,0 +1,31 @@
+﻿1 ) Download Microsoft.EntityFrameworkCore from Nuget. (Manage NuGet Packages )
+
+2) Download Microsoft.EntityFrameworkCore.Design from Nuget. (Manage Nuget Packages)
+
+3) Download Pomelo.EntityFrameworkCore.MySql from Nuget. (Manage Nuget Packages)
+
+4) Create your database.
+
+5) Add your connection string to database. 
+
+	"ConnectionStrings" : {
+	"schoolContext" : "Server = localhost; Port = 3306; User = root; Password = kendisifren; Database = school"
+	}
+
+
+6 ) Generate classes from Database (PM)
+
+	Required :  Install-Package Microsoft.EntityFrameworkCore.Tools 
+
+	Scaffold-DbContext "Server = localhost; Port = 3306;User=root;Password = kendisifren; Database = school" Pomelo.EntityFrameworkCore.MySql -OutputDir .\Models\DBModels
+
+
+7 ) Add your context to startup.cs
+
+	public IConfiguration Configuration { get; set; } // bu kısım önemli bir kısım startup içinde olması lazım.
+
+	services.AddDbContext<schoolContext>(options => options.UseMySql(Configuration.GetConnectionString("schoolContext")))
+
+8 ) Add your context to your controller
+
+	
