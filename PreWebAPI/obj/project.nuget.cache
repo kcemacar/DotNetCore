@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "sHvGor6WJlP8UiSwYRYtPCOYKnGtyWabWYiVy4FTaqzh30uUyVtM7Fj2D8ViBHpO90dMERYarmQ2pEWGKh65DQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\LENOVO\\source\\repos\\PrestaDeneme\\PrestaDeneme.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LENOVO\\.nuget\\packages\\prestasharp\\1.1.0\\prestasharp.1.1.0.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\restsharp\\106.6.10\\restsharp.106.6.10.nupkg.sha512"
+  ],
+  "logs": []
+}
