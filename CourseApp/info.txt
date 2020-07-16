@@ -1,0 +1,88 @@
+cmd :
+    dotnet new web => boş bir web projesi açmak
+    code . => visual studio code açmak
+    dotnet run => kodu çalıştırmak
+
+
+Program.cs : Programımızın giriş aşaması burası.
+Startup.cs : Kullanacağımız servisler ve responses için.
+    app.UseMvcWithDefaultRoute(); => localhost:5000/course/list (routing)
+
+
+Program => Startup => Controller 
+
+"dotnet watch run" yazdığımızda her defasında run etmek zorunda kalmıyoruz. değişikler otomatik olarak geçiyor.
+
+
+Program => Startup => Controller => return View() => dynamic web sayfası (Views/Controller ismi/action ismi.cshtml)
+
+Models : Action methodundan sayfamıza bilgi sağlamak için kullanıyoruz.
+
+Modelleri cshtml dosyamızın içinde kullanmak için :
+
+        @model CourseApp.Models.Course // Bu sayede Model.Name şeklinde kullanabiliriz.
+
+
+Building Forms : Kullanıcıdan veri almak için kullanılır. Model üzerindeki özellikleri de form üzerinde 
+kullanabiliriz.
+
+ <form asp-action="apply">
+
+            <p>
+                <label  asp-for = "name">Adınız</label>
+                <input asp-for = "name">
+            </p>
+
+
+_ViewImports.cshtml : cmd üzerinden "dotnet new viewimports" (views klasörü içinde kullanılır.)
+
+    @using CourseApp.Models
+    @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+
+*/*/* Receiving Form Data */*/*
+
+Network kısmında methodları görebiliyoruz. Ctrl+R -- Headers
+
+Student Modeli içinde validationları yapıyoruz.
+
+Objeleri belli bir yerde kaydetmemiz gerekiyor. O yüzden static bir sınıf içinde saklayabiliriz.
+
+Model Binding : Mvc projelerinde view ile controller arasında veri gönderme işlemlerine ve göndermiş olduğumuz
+verilerin model yapısı ile eşleştirilmesi işlemine denir. Http request ile gelen verilerin ayrıştırılarak
+ilgili Controller'da bulunan Action metod parametlerine ve uygun .NET tiplerine dönüştürülmesi işlemidir.
+
+
+*/*/* Saving Data */*/*
+
+Static bir sınıf oluşturalım(models içinde) ve bu sınıf bizim bilgilerimizi kayıt etsin. Uygulama çalıştığı
+süreçte çalışsın uygulama kapandığında bellekten silinsin.
+
+
+*/*/* Listing Data */*/*
+
+Program => Startup => Controller => Action View 
+
+@model IEnumerable<Student> // içine liste atabildiğimiz yapı
+
+ @foreach (var student in Model)
+               {
+                   <tr>
+                       <td>@student.Name</td>
+                       <td>@student.Email</td>
+                       <td>@student.Phone</td>
+                       <td>@student.Confirm</td>
+                   </tr>
+               }
+
+ */*/* Adding Validation */*/*         
+
+      İlgili sınıfa gidip belirli koşullar ekleme. Ex : [Required("Error Message")]
+
+      Controller üzerinde ModelState kullanmak kurallara uyulup uyulmadığını incelemeye yarıyor.
+
+      View içine de :  <div> asp-validation-summary = "All" </div> Eğer bir validation varsa buraya yazdırır.
+
+
+// Boostrap kullanımına bakmadım.

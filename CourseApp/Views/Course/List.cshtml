@@ -1,0 +1,37 @@
+@model IEnumerable<Student> // içine liste atabildiğimiz yapı
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf8">
+        <meta http-equiv="X-UA-Compatible" content= "IE=edge">
+        <title> LIST </title>
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+        <link rel = "stylesheet" type = "text/css" media = "screen" href="main.css">
+        <script src = "main.js"></script>
+    </head>
+    <body>
+       <table>
+           <thead>
+               <tr>
+                   <td>Name</td>
+                   <td>Email</td>
+                   <td>Phone</td>
+                   <td>Confirm</td>
+               </tr>
+           </thead>
+           <tbody>
+               @foreach (var student in Model)
+               {
+                   <tr>
+                       <td>@student.Name</td>
+                       <td>@student.Email</td>
+                       <td>@student.Phone</td>
+                       <td>@student.Confirm</td>
+                   </tr>
+               }
+           </tbody>
+       </table>
+    </body>
+</html>
