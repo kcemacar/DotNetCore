@@ -1,0 +1,31 @@
+﻿**** Routing ****
+
+routes.MapRoute(
+	"CoursesByReleased",
+	"courses/released/{year}/{month}",
+	new {controller = "Course", action = "ByReleased"} ,
+	new { year=@"\d{4}, month=@"\d{2}}
+);
+
+Controller da fonksiyon oluştururken router ismini alması gerekiyor.
+year ve month parametreler.
+
+year = 4 haneli 
+month = 2 haneli
+
+
+**** Passing Data to View ****
+
+Controller üzerinden view a veri taşımamız gerekiyor. 
+1) Önce controller içinde bir variable oluşturuyoruz.
+	
+	var kurs = new Course() {Id = 1, Name = "Komple Uygulamalı Web Geliştirme Eğitimi"}
+
+2) Sonra ViewData oluşturuyoruz.
+
+	ViewData["course"] = kurs;
+
+
+3) View içine ViewData yı yerleştiriyoruz.
+	
+	<h1> @(((Course)ViewData["course"]).Name)</h1>

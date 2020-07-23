@@ -1,0 +1,114 @@
+1) 
+
+    ViewStart :  
+            
+            Layout tanımına ait değerin her view’de aynı olduğunu düşünelim bu durumda Layot tanımını 
+    sadece ViewStart dosyasında yapıp  diğer view’lerden Layout tanımlarını silebilirsiniz.
+
+    ViewImports :
+
+        .cshtml dosyalarına model tanımlarken ya modelin bulunduğu namespaceleri tam olarak belirtmemiz gerektiği
+    için kullanıyoruz.
+
+
+        Tag helper server-side kodlarımızı html tagleri gibi oluşturup kullanmamızı sağlar.
+    Tek tek view dosyalarına eklemekle uğraşmaktansa “_ViewImports.cshtml” dosyasına da ekleyebilirsiniz.
+
+
+
+
+
+2) 
+    ****** Views and Controllers ********
+
+        Layout nedir ? : MVC projelerinde sayfa içerisinde bulunan belirli kısımların sabitlenmesi Mastar Page
+    yapısını kurmak için kullanılan yapıya Layout adı verilmektedir.
+
+        RenderBody() kısmına diğer sayfaların içerikleri gelecek ve bu sayfa sabit kalacak.
+
+3)
+    ****** Static Files ********
+
+        Statik Dosyalar : Statik dosyalar resim,*.pdf,*.txt, gibi dosyalardır. 
+    Bunların yanında bizim için son derece önemli olan css dosyaları da statik dosyalardır.
+
+    Yeni terminal aç : 
+                        npm init --yes
+                        npm i bootstrap@4.3.1 
+                        npm install
+                    
+
+
+    package.json : 
+
+        "name" : "proje-ismi",
+        "version":"0.0.1", //MAJOR.MINOR.PATCH 
+        "description":"Projenin tanımını yazınız.",
+        "author":"Kuty",
+        "scripts": { 
+        "test": "echo \"Kendi node komutunuzu oluşurmanızı sağlayan obje. 
+        Yani belirlediğiniz komutlara takma ad veriyorsunuz." && exit 1"
+    },
+    "bugs": {
+    "url": "https://github.com/kullanici-ismi/proje-ismi/issues"
+        },
+    "license":"MIT", // İnsanların projeniz hakkında kullanım iznini bilmesini sağlayacak obje.
+                        Açık kaynaklı bir proje ise MIT kullanırız.
+
+        "dependencies":{
+        Projemizde kullandığımız paketleri kullanmamız/indirmemiz için ihtiyacımız olan obje. 
+        Zorunlu olabilir. Eğer kullanacağımız projenin ihtiyaç duyduğu paketler sistemde global 
+        olarak yüklü ise ayrıyetten projeye indirmemize gerek yok. Fakat çok küçük olmayan bir proje yapıyorsanız 
+        fazla pakete ihtiyacınız olacağından hepsini global olarak indirmek istemezsiniz. 
+        Dolayısıyla buna ihtiyacınız olacak.
+    }
+
+4) 
+    wwwroot : 
+
+            - wwwroot klasörü altında olmayan hiçbir şey doğrudan ulaşılmaz halde. 
+            - css, javascript, resimler gibi browser ın oluşması gereken tüm dosyaları koyacağımız yer.
+
+            çalıştırmak için Startup.cs içerisinde app.UseStaticFiles();
+    
+
+    node_modules açabilmek için :
+
+            app.UseStaticFiles(new StaticFileOptions{
+                FileProvider = new PhysicalFileProvider(Path.Combine
+                (Directory.GetCurrentDirectory(),"node_modules")),
+                RequestPath = "/modules"
+            });
+
+5) 
+
+    Uygulamamızda data ile çalışacak bir model ve database gibi kullanabileceğimiz bir sınıf ekleyeceğiz.
+    Model & Repository 
+
+6) 
+
+    Öncelikle bootstrap teması kullanalım : 
+
+    ViewImports kısmına movie'den gelen namespace yazmamız gerekiyor.
+    Daha sonra shared klasörünün içinde Layout kısmında düzenlemeler.
+
+    bootstrap kullanmak için eklememiz gerekenler : 
+
+    <link rel = "stylesheet" href = "/modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel = "stylesheet" href = "/css/style.css">
+    ....
+    ....
+
+    
+
+7) Şimdi film listesini Repository den gelen bilgilerle oluşturalım.
+
+    _movies.cshtml sayfasına veri göndermemiz lazım 
+    @model IEnumerable<Movie>
+
+
+    HomeController dan aldığımızı ilk önce index.cshtml e taşıcaz ondan sonra _movies.cshtml ' e taşıcaz.
+
+
+
+8) Her bir liste elemanının detay bilgilerini detay sayfasında görelim, yani link ekleyeceğiz.
