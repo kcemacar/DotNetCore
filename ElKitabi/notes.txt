@@ -1,0 +1,73 @@
+wwwroot : Klasör statik dosyalari tutar. ( CSS, JavaScript, ve image dosyalari)
+
+appsetting.json : Burada database baglantilari ve proje icerisinde dogrudan yazmak istemediginiz seyleri burada tanimlayabilirsiniz.
+
+Controller : Web browser uzerinden gelen talepleri karsilayarak hangi kod parcacaginin calisicagina karar verir.
+
+View : Genelde sadece tema gorevi. Yaptığı işlem sadece Controllerdan gönderilen veriyi almak ve ekranda göstermektir.
+
+
+Model : Verilerin tutulmasını sağlar.
+
+
+Genel kalıp : 
+	Controller talebi alır ve veritabanında bulunan bilgilere bakar.
+	Controller bu bilgilerden model üreterek View'e ekler.
+	Görüntü kullanıcın tarayıcısında görünür.
+	Kullanıcı butona tıklar ve yeni bir talebi Controller gönderir.
+	
+
+Controller tarafından idare edilen rotalara aksiyon denir.
+
+		localhost:5000/Home         -> Index()
+		localhost:5000/Home/About   -> About()
+		localhost:5000/Home/Contact -> Contact()
+
+
+Controller yazmadan önce Model ve View oluşturmak gerekir.
+
+
+İki tür model sınıfı vardır :
+
+	1 ) Veritabanında temsil eden sınıf. (Entity) 
+	2 ) Modeli önyüze göndermeye yaran modeldir.
+
+View Razor üzerine kurulu. Html ile C# kodunu birleştirebilmemizi sağlar. 
+C# komutları @ ile başlar. Yapılması gereken : 		
+
+	Örneğin Index aksiyonunu kullanacağız ve Comtoller ismi TodoController 
+
+	1) Views içerisine Todo adında bir klasör oluşturmak 
+	2) Bunun içerisine Index.cshtml dosyası oluşturmak.
+
+
+Model, View ve Controller oluşturuldu. Şimdi neler yapılmalı ? 
+
+	Veritabanına bağlanıp model oluşturma işleminin tamamını Controller içerisinde yapabiliriz.
+	Fakat bu iyi bir pratik değildir. 
+
+Servis oluşturmalıyız : 
+
+	Interface metodların ve özelliklerin aslında işi yapan sınıftan ayrılması olarak tanımlanabilir.
+	Önce Interface'i oluşturarark yapılacaklar listesi için oluşturulacak servisi tanımlayalım. 
+	Bu oluşturacağımız dosyaları da Services klasörünün içerisinde oluşturmalıyız.
+
+Artık Interface'i tanımladık : 
+
+	İşi yapan servis sınıfını yapmaya başlayabiliriz. Şimdilik örnek veriler kullanarak işlemimizi 
+	gerçekleştireceğiz.
+
+Bağımlı Enjeksiyon Kullanma : 
+
+	Controller içine gidip IToDoService kullanmak için eklemeler yapmamız lazım.
+
+	private readonly ITodoItemService _todoItemService;
+
+    public TodoController(ITodoItemService todoItemService)
+    {
+        _todoItemService = todoItemService;
+    }
+
+
+
+*******problem********
