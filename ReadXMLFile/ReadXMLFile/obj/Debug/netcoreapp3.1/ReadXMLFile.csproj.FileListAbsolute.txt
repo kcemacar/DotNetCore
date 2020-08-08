@@ -1,0 +1,13 @@
+C:\Users\LENOVO\source\repos\ReadXMLFile\ReadXMLFile\bin\Debug\netcoreapp3.1\ReadXMLFile.exe
+C:\Users\LENOVO\source\repos\ReadXMLFile\ReadXMLFile\bin\Debug\netcoreapp3.1\ReadXMLFile.deps.json
+C:\Users\LENOVO\source\repos\ReadXMLFile\ReadXMLFile\bin\Debug\netcoreapp3.1\ReadXMLFile.runtimeconfig.json
+C:\Users\LENOVO\source\repos\ReadXMLFile\ReadXMLFile\bin\Debug\netcoreapp3.1\ReadXMLFile.runtimeconfig.dev.json
+C:\Users\LENOVO\source\repos\ReadXMLFile\ReadXMLFile\bin\Debug\netcoreapp3.1\ReadXMLFile.dll
+C:\Users\LENOVO\source\repos\ReadXMLFile\ReadXMLFile\bin\Debug\netcoreapp3.1\ReadXMLFile.pdb
+C:\Users\LENOVO\source\repos\ReadXMLFile\ReadXMLFile\obj\Debug\netcoreapp3.1\ReadXMLFile.csprojAssemblyReference.cache
+C:\Users\LENOVO\source\repos\ReadXMLFile\ReadXMLFile\obj\Debug\netcoreapp3.1\ReadXMLFile.AssemblyInfoInputs.cache
+C:\Users\LENOVO\source\repos\ReadXMLFile\ReadXMLFile\obj\Debug\netcoreapp3.1\ReadXMLFile.AssemblyInfo.cs
+C:\Users\LENOVO\source\repos\ReadXMLFile\ReadXMLFile\obj\Debug\netcoreapp3.1\ReadXMLFile.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\source\repos\ReadXMLFile\ReadXMLFile\obj\Debug\netcoreapp3.1\ReadXMLFile.dll
+C:\Users\LENOVO\source\repos\ReadXMLFile\ReadXMLFile\obj\Debug\netcoreapp3.1\ReadXMLFile.pdb
+C:\Users\LENOVO\source\repos\ReadXMLFile\ReadXMLFile\obj\Debug\netcoreapp3.1\ReadXMLFile.genruntimeconfig.cache
