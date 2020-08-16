@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "QDAM2MCDdOb4cAPe7cx86HcfQFOcFUQcnVk8kKgVXtgK3EKx8aAHthFZ9k75mH4OGNBSEDg/UsWERnSoJDwlDA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\LENOVO\\source\\repos\\JsonParser\\JsonParser\\JsonParser.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LENOVO\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

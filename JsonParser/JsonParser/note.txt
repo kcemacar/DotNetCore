@@ -1,0 +1,22 @@
+﻿*** JsonConvert	
+	Provides methods for converting between .NET types and JSON types.
+	SerializeObject(Object)	: Serializes the specified object to a JSON string.
+
+
+*** File.WriteAllText
+Yeni bir dosya oluşturur, içeriği dosyaya yazar ve ardından dosyayı kapatır. Hedef dosya zaten varsa, üzerine yazılır.
+
+
+String.Empty : Sıfır uzunluklu dizedir.
+
+*** File.ReadAllText Method
+Bir metin dosyası açar, dosyadaki tüm metni bir dizeye okur ve sonra dosyayı kapatır.
+
+
+
+
+
+
+
+
+
